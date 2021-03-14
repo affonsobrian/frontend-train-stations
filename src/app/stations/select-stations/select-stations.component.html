@@ -1,28 +1,32 @@
 <h1 class="mt-4">Train Departures</h1>
 <ol class="breadcrumb mb-4">
-    Select a train station to see the next departures
+  Select a train station to see the next departures
 </ol>
 <div class="container">
-    <select *ngIf="stationsLoaded == true" class="form-control" #t (change)="dataChanged(t.value)">
-        <option disabled selected>Select a station</option>
-        <option *ngFor="let station of stations" [value]="station.code">{{station.name}}</option>
-    </select>
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Departure Time</th>
-            <th scope="col">Direction</th>
-            <th scope="col">Platform</th>
-            <th scope="col">Train Type</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let departure of departures">
-            <td>{{ departure.planned_departure_time }}</td>
-            <td>{{ departure.direction }}</td>
-            <td>{{ departure.platform }}</td>
-            <td>{{ departure.train_type }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="d-flex align-items-center" *ngIf="stationsLoaded == false">
+    <strong>Loading stations, please wait...</strong>
+    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+  </div>
+  <select *ngIf="stationsLoaded == true" class="form-control" #t (change)="dataChanged(t.value)">
+    <option disabled selected>Select a station</option>
+    <option *ngFor="let station of stations" [value]="station.code">{{station.name}}</option>
+  </select>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Departure Time</th>
+        <th scope="col">Direction</th>
+        <th scope="col">Platform</th>
+        <th scope="col">Train Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let departure of departures">
+        <td>{{ departure.planned_departure_time }}</td>
+        <td>{{ departure.direction }}</td>
+        <td>{{ departure.platform }}</td>
+        <td>{{ departure.train_type }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
