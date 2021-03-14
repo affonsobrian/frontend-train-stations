@@ -13,11 +13,11 @@ export class StationsService {
   constructor(private http: HttpClient) {}
 
   getStations() : Observable<Station[]>{
-    return this.http.get<Station[]>("http://localhost:8000/stations");
+    return this.http.get<Station[]>("https://train-departure.herokuapp.com/stations/");
   }
 
   getDepartures(stationCode: string) : Observable<Departure[]> {
-    return this.http.get<Departure[]>("http://localhost:8000/departures/"+stationCode);
+    return this.http.get<Departure[]>("https://train-departure.herokuapp.com/departures/"+stationCode);
   }
 
 }
