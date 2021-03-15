@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { StationsRoutingModule } from './stations-routing.module';
 import { SelectStationsComponent } from './select-stations/select-stations.component';
+import { TrainsTableComponent } from './trains-table/trains-table.component';
 
 
 @NgModule({
-  declarations: [SelectStationsComponent],
+  declarations: [SelectStationsComponent, TrainsTableComponent],
   imports: [
     CommonModule,
     StationsRoutingModule,
