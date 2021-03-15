@@ -3,11 +3,11 @@
   Select a train station to see the next departures
 </ol>
 <div class="container">
-  <div class="d-flex align-items-center" *ngIf="stationsLoaded == false">
+  <div class="d-flex align-items-center" *ngIf="stations.length == 0">
     <strong>Loading stations, please wait...</strong>
     <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
   </div>
-  <select *ngIf="stationsLoaded == true" class="form-control" #t (change)="dataChanged(t.value)">
+  <select *ngIf="stations.length > 0" class="form-control" #t (change)="dataChanged(t.value)">
     <option disabled selected>Select a station</option>
     <option *ngFor="let station of stations" [value]="station.code">{{station.name}}</option>
   </select>

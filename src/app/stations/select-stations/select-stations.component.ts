@@ -13,7 +13,6 @@ export class SelectStationsComponent implements OnInit {
 
   selectStation: string = "";
   stations: Station[];
-  stationsLoaded: boolean = false;
   departures: Departure[] = [];
 
   dataChanged(value: string){
@@ -27,10 +26,10 @@ export class SelectStationsComponent implements OnInit {
   constructor(private service : StationsService) { }
 
   ngOnInit(): void {
+    this.stations = [];
     this.service.getStations()
       .subscribe( response => {
         this.stations = response;
-        this.stationsLoaded = true;
       })
     }
 }
