@@ -12,6 +12,9 @@ import { Departure } from '../departure';
 export class SelectStationsComponent implements OnInit {
 
   selectStation: string = "";
+  stations: Station[];
+  stationsLoaded: boolean = false;
+  departures: Departure[] = [];
 
   dataChanged(value: string){
       this.selectStation = value;
@@ -22,10 +25,6 @@ export class SelectStationsComponent implements OnInit {
           this.departures = response;
         })
   }
-
-  stations: Station[];
-  stationsLoaded: boolean = false;
-  departures: Departure[] = [];
 
   constructor(private service : StationsService) { }
 
