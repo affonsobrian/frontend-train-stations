@@ -1,6 +1,6 @@
 # frontend-train-stations
 
-To run de application localy run the following commands in order:
+To run de application localy run the following commands:
 ```
 npm install
 
