@@ -1,15 +1,7 @@
-<h1 class="mt-4">Train Departures</h1>
+<h1 class="mt-4">Praticando API Livros</h1>
 <ol class="breadcrumb mb-4">
-  Select a train station to see the next departures
+  Veja os livros
 </ol>
 <div class="container">
-  <div class="d-flex align-items-center" *ngIf="stations.length == 0">
-    <strong>Loading stations, please wait...</strong>
-    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
-  </div>
-  <select *ngIf="stations.length > 0" class="form-control" #t (change)="dataChanged(t.value)">
-    <option disabled selected>Select a station</option>
-    <option *ngFor="let station of stations" [value]="station.code">{{station.name}}</option>
-  </select>
   <app-trains-table [departures]="departures" [selectStation]="selectStation"></app-trains-table>
 </div>

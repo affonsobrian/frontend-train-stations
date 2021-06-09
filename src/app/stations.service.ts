@@ -16,8 +16,7 @@ export class StationsService {
     return this.http.get<Station[]>("https://train-departure.herokuapp.com/stations/");
   }
 
-  getDepartures(stationCode: string) : Observable<Departure[]> {
-    return this.http.get<Departure[]>("https://train-departure.herokuapp.com/departures/"+stationCode);
+  getDepartures() : Observable<Departure[]> {
+    return this.http.get<Departure[]>("http://praticando-api.herokuapp.com/livros");
   }
-
 }

@@ -17,7 +17,7 @@ export class SelectStationsComponent implements OnInit {
 
   dataChanged(value: string){
       this.selectStation = value;
-      this.service.getDepartures(value)
+      this.service.getDepartures()
         .subscribe( response => {
           this.departures = response;
         })
@@ -27,6 +27,12 @@ export class SelectStationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.stations = [];
+
+    this.service.getDepartures()
+      .subscribe( response => {
+        this.departures = response;
+      })
+
     this.service.getStations()
       .subscribe( response => {
         this.stations = response;

@@ -1,21 +1,17 @@
 <table class="table">
     <thead>
         <tr>
-        <th scope="col">Departure Time</th>
-        <th scope="col">Direction</th>
-        <th scope="col">Platform</th>
-        <th scope="col">Train Type</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Autor</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let departure of departures">
-        <td>{{ departure.planned_departure_time }}</td>
-        <td>{{ departure.direction }}</td>
-        <td>{{ departure.platform }}</td>
-        <td>{{ departure.train_type }}</td>
+        <td>{{ departure.titulo }}</td>
+        <td>{{ departure.autor }}</td>
         </tr>
     </tbody>
     </table>
     <h4 align="center" *ngIf="selectStation.length > 0 && departures.length == 0">
-    No departures found for this station
+    Sem livros encontrados
 </h4>
